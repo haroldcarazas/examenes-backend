@@ -1,5 +1,5 @@
 import { Schema, model, Types } from 'mongoose'
-import userModel from './User.js'
+import User from './User.js'
 
 const cursoSchema = new Schema({
   nombre: {
@@ -9,10 +9,10 @@ const cursoSchema = new Schema({
   maestros: [{
     type: Types.ObjectId,
     required: true,
-    ref: userModel
+    ref: User
   }]
 })
 
-const cursoModel = model('Curso', cursoSchema)
+const Curso = model('Curso', cursoSchema)
 
-export default cursoModel
+export default Curso

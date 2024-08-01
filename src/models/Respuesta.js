@@ -1,21 +1,21 @@
 import { Schema, model, Types } from 'mongoose'
-import userModel from './User.js'
-import preguntaModel from './Pregunta.js'
-import examenModel from './Examen.js'
-import videoModel from './Video.js'
+import Pregunta from './Pregunta.js'
+import Examen from './Examen.js'
+import Video from './Video.js'
+import User from './User.js'
 
 const resSchema = new Schema({
   pregunta: {
     type: Types.ObjectId,
     required: true,
-    ref: preguntaModel
+    ref: Pregunta
   },
   respuestaAlumno: {
     type: String
   },
   video: {
     type: Types.ObjectId,
-    ref: videoModel
+    ref: Video
   },
   puntajeGanado: {
     type: Number,
@@ -27,13 +27,13 @@ const respuestaSchema = new Schema({
   user: {
     type: Types.ObjectId,
     required: true,
-    ref: userModel
+    ref: User
   },
   respuestas: [resSchema],
   examen: {
     type: Types.ObjectId,
     required: true,
-    ref: examenModel
+    ref: Examen
   },
   puntajeTotal: {
     type: Number,
@@ -41,6 +41,6 @@ const respuestaSchema = new Schema({
   }
 })
 
-const respuestaModel = model('Respuesta', respuestaSchema)
+const Respuesta = model('Respuesta', respuestaSchema)
 
-export default respuestaModel
+export default Respuesta

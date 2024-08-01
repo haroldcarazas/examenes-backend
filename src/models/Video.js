@@ -1,11 +1,11 @@
 import { Schema, model, Types } from 'mongoose'
-import userModel from './User.js'
+import User from './User.js'
 
 const videoSchema = new Schema({
   user: {
     type: Types.ObjectId,
     required: true,
-    ref: userModel
+    ref: User
   },
   file: {
     type: String,
@@ -13,6 +13,6 @@ const videoSchema = new Schema({
   }
 })
 
-const videoModel = model('Video', videoSchema)
+const Video = model('Video', videoSchema)
 
-export default videoModel
+export default Video

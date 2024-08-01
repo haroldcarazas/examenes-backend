@@ -1,5 +1,5 @@
 import { Schema, model, Types } from 'mongoose'
-import cursoModel from './Curso.js'
+import Curso from './Curso.js'
 import Pregunta from './Pregunta.js'
 
 const preguntaPuntajeSchema = new Schema({
@@ -22,7 +22,7 @@ const examenSchema = new Schema({
   curso: {
     type: Types.ObjectId,
     required: true,
-    ref: cursoModel
+    ref: Curso
   },
   preguntas: [preguntaPuntajeSchema]
 })
