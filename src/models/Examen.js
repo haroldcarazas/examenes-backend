@@ -1,12 +1,12 @@
 import { Schema, model, Types } from 'mongoose'
 import cursoModel from './Curso.js'
-import preguntaModel from './Pregunta.js'
+import Pregunta from './Pregunta.js'
 
 const preguntaPuntajeSchema = new Schema({
   pregunta: {
     type: Types.ObjectId,
     required: true,
-    ref: preguntaModel
+    ref: Pregunta
   },
   puntaje: {
     type: Number,
@@ -27,6 +27,6 @@ const examenSchema = new Schema({
   preguntas: [preguntaPuntajeSchema]
 })
 
-const examenModel = model('Examene', examenSchema)
+const Examen = model('Examene', examenSchema)
 
-export default examenModel
+export default Examen

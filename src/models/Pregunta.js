@@ -19,6 +19,6 @@ const preguntaSchema = new Schema({
   }
 })
 
-const preguntaModel = model('Pregunta', preguntaSchema)
+const Pregunta = model('Pregunta', preguntaSchema)
 
-export default preguntaModel
+export default Pregunta
